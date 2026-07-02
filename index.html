@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>図書環境に関するアンケート（一般住民向け）</title>
+  <style>
+    /* 見た目（CSS）の設定 */
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f0f8ff; color: #333; padding: 20px; line-height: 1.6; }
+    .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #007acc; font-size: 24px; margin-bottom: 30px; }
+    h2 { background: #e6f2ff; color: #005999; padding: 8px 15px; border-radius: 5px; font-size: 18px; margin-top: 40px; }
+    .question-block { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #ccc; }
+    .question-title { font-weight: bold; font-size: 16px; margin-bottom: 12px; }
+    .sub-text { font-size: 13px; color: #666; margin-bottom: 8px; font-style: italic; }
+    label { display: block; background: #f9f9f9; padding: 12px 15px; margin-bottom: 8px; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; font-size: 15px; transition: 0.2s; }
+    label:hover { background: #edf5ff; border-color: #a3c2ff; }
+    input[type="radio"], input[type="checkbox"] { transform: scale(1.5); margin-right: 12px; vertical-align: middle; cursor: pointer; }
+    textarea { width: 100%; height: 100px; box-sizing: border-box; font-size: 16px; padding: 10px; border: 2px solid #ddd; border-radius: 8px; resize: none; }
+    button { display: block; width: 100%; background: #ff9900; color: white; border: none; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 0 #cc7a00; margin-top: 40px; }
+    button:active { transform: translateY(4px); box-shadow: none; }
+    button:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; }
+    #success-message { display: none; text-align: center; padding: 5px; }
+    #success-message h3 { color: #28a745; font-size: 22px; }
+  </style>
+</head>
+<body>
+
+<div class="container" id="form-container">
+  <h1>図書環境に関するアンケート</h1>
+  <form id="survey-form">
+    
+    <h2>【基本情報と読書習慣】</h2>
+    
+    <div class="question-block">
+      <div class="question-title">1. あなたの年代を教えてください。</div>
+      <label><input type="radio" name="q1" value="20代以下" required> 20代以下</label>
+      <label><input type="radio" name="q1" value="30代"> 30代</label>
+      <label><input type="radio" name="q1" value="40代"> 40代</label>
+      <label><input type="radio" name="q1" value="50代"> 50代</label>
+      <label><input type="radio" name="q1" value="60代"> 60代</label>
+      <label><input type="radio" name="q1" value="70代"> 70代</label>
+      <label><input type="radio" name="q1" value="80代以上"> 80代以上</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">2. 1か月の読書量はおおよそ何冊ですか？</div>
+      <label><input type="radio" name="q2" value="0冊" required> 0冊</label>
+      <label><input type="radio" name="q2" value="1〜3冊"> 1〜3冊</label>
+      <label><input type="radio" name="q2" value="4〜10冊"> 4〜10冊</label>
+      <label><input type="radio" name="q2" value="11冊以上"> 11冊以上</label>
+    </div>
+
+    <h2>【既存図書館へのアクセスと課題】</h2>
+
+    <div class="question-block">
+      <div class="question-title">3. 明石市内の図書館の利用頻度を教えてください。</div>
+      <label><input type="radio" name="q3" value="週1回以上" required> 週1回以上</label>
+      <label><input type="radio" name="q3" value="月1回程度"> 月1回程度</label>
+      <label><input type="radio" name="q3" value="年数回"> 年数回</label>
+      <label><input type="radio" name="q3" value="利用しない"> 利用しない</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">4. （利用しない・年数回の方へ）あまり利用されない理由は何ですか？</div>
+      <div class="sub-text">※複数選択可</div>
+      <label><input type="checkbox" name="q4" value="遠くて行くのが大変"> 遠くて行くのが大変</label>
+      <label><input type="checkbox" name="q4" value="車がないと行けない"> 車がないと行けない</label>
+      <label><input type="checkbox" name="q4" value="駐車場が狭い"> 駐車場が狭い</label>
+      <label><input type="checkbox" name="q4" value="開館時間に行けない"> 開館時間に行けない</label>
+      <label><input type="checkbox" name="q4" value="その他"> その他</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">5. 現在の図書館（47万1千冊）の蔵書やサービスには満足していますか？</div>
+      <label><input type="radio" name="q5" value="満足"> 満足</label>
+      <label><input type="radio" name="q5" value="やや満足"> やや満足</label>
+      <label><input type="radio" name="q5" value="やや不満"> やや不満</label>
+      <label><input type="radio" name="q5" value="不満"> 不満</label>
+    </div>
+
+    <h2>【移動図書館・電子書籍の限界について】</h2>
+
+    <div class="question-block">
+      <div class="question-title">6. 市内81か所を回る「移動図書館」の利用頻度を教えてください。</div>
+      <label><input type="radio" name="q6" value="週1回以上"> 週1回以上</label>
+      <label><input type="radio" name="q6" value="月1回程度"> 月1回程度</label>
+      <label><input type="radio" name="q6" value="年数回"> 年数回</label>
+      <label><input type="radio" name="q6" value="利用しない"> 利用しない</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">7. 移動図書館（月1回、1回15冊まで）のサービスは十分だと感じますか？</div>
+      <label><input type="radio" name="q7" value="十分である"> 十分である</label>
+      <label><input type="radio" name="q7" value="不十分である"> 不十分である</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">8. （不十分であると感じる方へ）その理由は何ですか？</div>
+      <div class="sub-text">※複数選択可</div>
+      <label><input type="checkbox" name="q8" value="巡回頻度が少ない（月1では足りない）"> 巡回頻度が少ない（月1では足りない）</label>
+      <label><input type="checkbox" name="q8" value="巡回時間が合わない（平日昼間など）"> 巡回時間が合わない（平日昼間など）</label>
+      <label><input type="checkbox" name="q8" value="積んでいる本が少なく選びたい本がない"> 積んでいる本が少なく選びたい本がない</label>
+      <label><input type="checkbox" name="q8" value="雨の日は利用しづらい"> 雨の日は利用しづらい</label>
+      <label><input type="checkbox" name="q8" value="その他"> その他</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">9. 市の電子書籍サービス（約1万1千冊）を利用していますか？</div>
+      <label><input type="radio" name="q9" value="よく利用する"> よく利用する</label>
+      <label><input type="radio" name="q9" value="たまに利用する"> たまに利用する</label>
+      <label><input type="radio" name="q9" value="利用していない"> 利用していない</label>
+      <label><input type="radio" name="q9" value="知らなかった"> 知らなかった</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">10. 電子書籍サービスの課題は何だと感じますか？</div>
+      <div class="sub-text">※複数選択可</div>
+      <label><input type="checkbox" name="q10" value="蔵書数（1万1千冊）が少ない"> 蔵書数（1万1千冊）が少ない</label>
+      <label><input type="checkbox" name="q10" value="読みたい新刊がない"> 読みたい新刊がない</label>
+      <label><input type="checkbox" name="q10" value="スマホ等では目が疲れる/読みづらい"> スマホ等では目が疲れる/読みづらい</label>
+      <label><input type="checkbox" name="q10" value="子どもに端末ばかり見せたくない"> 子どもに端末ばかり見せたくない</label>
+      <label><input type="checkbox" name="q10" value="利用方法がわからない"> 利用方法がわからない</label>
+      <label><input type="checkbox" name="q10" value="課題はない"> 課題はない</label>
+    </div>
+
+    <h2>【林校区（衣川地区）の図書環境について】</h2>
+
+    <div class="question-block">
+      <div class="question-title">11. 林校区（衣川地区）に、図書施設は必要だと思いますか？</div>
+      <label><input type="radio" name="q11" value="絶対に必要" required> 絶対に必要</label>
+      <label><input type="radio" name="q11" value="できれば欲しい"> できれば欲しい</label>
+      <label><input type="radio" name="q11" value="今のままでよい"> 今のままでよい</label>
+      <label><input type="radio" name="q11" value="不要"> 不要</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">12. （必要と答えた方へ）その主な理由は何ですか？</div>
+      <div class="sub-text">※複数選択可</div>
+      <label><input type="checkbox" name="q12" value="子どもが一人で安全に行ける場所がない"> 子どもが一人で安全に行ける場所がない</label>
+      <label><input type="checkbox" name="q12" value="高齢になり遠方の図書館に行くのが困難"> 高齢になり遠方の図書館に行くのが困難</label>
+      <label><input type="checkbox" name="q12" value="気軽に本に触れる環境が地域に必要"> 気軽に本に触れる環境が地域に必要</label>
+      <label><input type="checkbox" name="q12" value="学生の学習スペースがない"> 学生の学習スペースがない</label>
+      <label><input type="checkbox" name="q12" value="その他"> その他</label>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-title">13. もし林校区に上記のような図書施設・窓口ができた場合、どのくらいの頻度で利用すると思いますか？</div>
+      <label><input type="radio" name="q13" value="週1回以上"> 週1回以上</label>
+      <label><input type="radio" name="q13" value="月1〜2回"> 月1〜2回</label>
+      <label><input type="radio" name="q13" value="年数回"> 年数回</label>
+      <label><input type="radio" name="q13" value="利用しない"> 利用しない</label>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-title">14. 図書館ができた場合、地域のボランティア等で運営をサポートすることに協力できますか？</div>
+      <label><input type="radio" name="q14" value="協力できる"> 協力できる</label>
+      <label><input type="radio" name="q14" value="条件次第で協力できる"> 条件次第で協力できる</label>
+      <label><input type="radio" name="q14" value="難しい"> 難しい</label>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">15. 現在、他の地域には図書館があり、衣川地区にはないという地域間格差についてどう感じますか？</div>
+      <textarea name="q15" placeholder="ご自由にお書きください"></textarea>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-title">16. 市に対して、読書環境の改善について最も強く要望したいことは何ですか？</div>
+      <textarea name="q16" placeholder="ご自由にお書きください"></textarea>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">17. 林校区の図書環境や図書館設置について、ご意見をご自由にお書きください。</div>
+      <textarea name="q17" placeholder="ご自由にお書きください"></textarea>
+    </div>
+
+    <button type="submit" id="submit-btn">送信する</button>
+  </form>
+</div>
+
+<div class="container" id="success-message">
+  <h3>アンケートへのご協力、<br>誠にありがとうございました！</h3>
+  <button type="button" id="next-btn" style="background: #28a745; box-shadow: 0 4px 0 #1e7e34; margin-top: 20px;">続けて回答する（次の方）</button>
+</div>
+
+<script>
+  // ★ここにステップ1で取得したURLを貼り付けます★
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/あなたの取得したID/exec';
+
+  const form = document.getElementById('survey-form');
+  const submitBtn = document.getElementById('submit-btn');
+
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  let radioStates = {};
+  
+  // ラジオボタンの解除機能
+  radioButtons.forEach(radio => {
+    radio.addEventListener('click', function(e) {
+      if (radioStates[this.name] === this.value) {
+        this.checked = false;
+        radioStates[this.name] = null;
+      } else {
+        radioStates[this.name] = this.value;
+      }
+    });
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // 必須項目のチェック（基本情報等）
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const q3 = document.querySelector('input[name="q3"]:checked');
+    const q11 = document.querySelector('input[name="q11"]:checked');
+    
+    if(!q1 || !q2 || !q3 || !q11) {
+      alert('必須項目が選択されていません。確認してください。');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "送信中...";
+
+    const formData = new FormData(form);
+    
+    // 複数選択（チェックボックス）の値を「／」区切りでまとめる
+    const q4Values = formData.getAll('q4').join('／');
+    const q8Values = formData.getAll('q8').join('／');
+    const q10Values = formData.getAll('q10').join('／');
+    const q12Values = formData.getAll('q12').join('／');
+
+    const answer = {
+      timestamp: new Date().toLocaleString('ja-JP'),
+      q1: formData.get('q1') || '',
+      q2: formData.get('q2') || '',
+      q3: formData.get('q3') || '',
+      q4: q4Values,
+      q5: formData.get('q5') || '',
+      q6: formData.get('q6') || '',
+      q7: formData.get('q7') || '',
+      q8: q8Values,
+      q9: formData.get('q9') || '',
+      q10: q10Values,
+      q11: formData.get('q11') || '',
+      q12: q12Values,
+      q13: formData.get('q13') || '',
+      q14: formData.get('q14') || '',
+      q15: formData.get('q15') || '',
+      q16: formData.get('q16') || '',
+      q17: formData.get('q17') || ''
+    };
+    
+    // Google Apps Script へデータを送信
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(answer),
+      headers: {
+        'Content-Type': 'text/plain'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.status === 'success') {
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+        window.scrollTo(0, 0);
+      } else {
+        alert('サーバー側でエラーが発生しました。');
+        submitBtn.disabled = false;
+        submitBtn.innerText = "送信する";
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('通信エラーが発生しました。ネットワーク状況をご確認ください。');
+      submitBtn.disabled = false;
+      submitBtn.innerText = "送信する";
+    });
+  });
+
+  // 「次の方の回答へ」ボタン
+  document.getElementById('next-btn').addEventListener('click', function() {
+    form.reset();
+    radioStates = {};
+    submitBtn.disabled = false;
+    submitBtn.innerText = "送信する";
+    document.getElementById('success-message').style.display = 'none';
+    document.getElementById('form-container').style.display = 'block';
+    window.scrollTo(0, 0);
+  });
+</script>
+</body>
+</html>
